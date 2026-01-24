@@ -1,4 +1,4 @@
-import './App.css'
+import './styles/App.css'
 import Hero from './components/Hero'
 import SearchBar from './components/SearchBar'
 import PriceFilter from './components/PriceFilter'
