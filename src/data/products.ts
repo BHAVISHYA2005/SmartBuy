@@ -1,7 +1,6 @@
-// Mock product data - In production, this would come from an API
-// Affiliate links are automatically generated with your affiliate ID
+import { Product } from '../types/product';
 
-export const products = [
+export const products: Product[] = [
     // Mobile Phones
     {
         id: 1,
@@ -13,7 +12,7 @@ export const products = [
         rating: 4.3,
         reviews: 12453,
         features: ['6000mAh Battery', '50MP Camera', '120Hz Display'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 2,
@@ -25,7 +24,7 @@ export const products = [
         rating: 4.5,
         reviews: 8234,
         features: ['200MP Camera', 'AMOLED Display', '67W Fast Charging'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 3,
@@ -37,7 +36,7 @@ export const products = [
         rating: 4.4,
         reviews: 5621,
         features: ['80W SuperVOOC', '5000mAh Battery', '108MP Camera'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
     {
         id: 4,
@@ -49,7 +48,7 @@ export const products = [
         rating: 4.2,
         reviews: 4532,
         features: ['200MP OIS Camera', 'Curved AMOLED', '100W Charging'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
 
     // Laptops
@@ -63,7 +62,7 @@ export const products = [
         rating: 4.3,
         reviews: 3421,
         features: ['AMD Ryzen 5', '8GB RAM', '512GB SSD'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 6,
@@ -75,7 +74,7 @@ export const products = [
         rating: 4.1,
         reviews: 2876,
         features: ['Intel i5 12th Gen', '16GB RAM', '512GB SSD'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
     {
         id: 7,
@@ -87,7 +86,7 @@ export const products = [
         rating: 4.4,
         reviews: 1987,
         features: ['Intel i5', '8GB RAM', 'Fingerprint Sensor'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
 
     // Headphones
@@ -101,7 +100,7 @@ export const products = [
         rating: 4.7,
         reviews: 8932,
         features: ['ANC', '30hr Battery', 'Premium Sound'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 9,
@@ -113,7 +112,7 @@ export const products = [
         rating: 4.2,
         reviews: 5432,
         features: ['Active Noise Cancelling', '35hr Battery', 'JBL Signature'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
     {
         id: 10,
@@ -125,7 +124,7 @@ export const products = [
         rating: 4.0,
         reviews: 12453,
         features: ['20hr Playback', 'Physical Noise Isolation', 'Dual Modes'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
 
     // Smart Watches
@@ -139,7 +138,7 @@ export const products = [
         rating: 4.1,
         reviews: 34521,
         features: ['1.39" Display', 'Bluetooth Calling', '120+ Sports Modes'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 12,
@@ -151,7 +150,7 @@ export const products = [
         rating: 4.2,
         reviews: 23456,
         features: ['1.72" Display', 'Bluetooth Calling', '100+ Watch Faces'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
     {
         id: 13,
@@ -163,7 +162,7 @@ export const products = [
         rating: 4.5,
         reviews: 4532,
         features: ['AMOLED Display', '15 Day Battery', '120+ Sports Modes'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
 
     // Cameras
@@ -177,7 +176,7 @@ export const products = [
         rating: 4.6,
         reviews: 2341,
         features: ['24.1MP CMOS', 'Full HD Video', 'WiFi & NFC'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 15,
@@ -189,7 +188,7 @@ export const products = [
         rating: 4.7,
         reviews: 1876,
         features: ['24.2MP DX-Format', '1080p Video', 'Guide Mode'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
 
     // Tablets
@@ -203,7 +202,7 @@ export const products = [
         rating: 4.3,
         reviews: 5432,
         features: ['10.5" Display', 'Quad Speakers', '7040mAh Battery'],
-        affiliate: 'amazon'
+        affiliate: 'amazon',
     },
     {
         id: 17,
@@ -215,7 +214,7 @@ export const products = [
         rating: 4.1,
         reviews: 3421,
         features: ['10.1" FHD Display', 'Dual Speakers', 'Kids Mode'],
-        affiliate: 'flipkart'
+        affiliate: 'flipkart',
     },
     {
         id: 18,
@@ -227,60 +226,6 @@ export const products = [
         rating: 4.2,
         reviews: 2987,
         features: ['8.7" Display', 'Slim Design', '6400mAh Battery'],
-        affiliate: 'amazon'
-    }
-]
-
-// Function to generate affiliate link
-export function generateAffiliateLink(product) {
-    // In production, replace with your actual affiliate IDs
-    const affiliateIds = {
-        amazon: 'YOUR_AMAZON_AFFILIATE_ID',
-        flipkart: 'YOUR_FLIPKART_AFFILIATE_ID'
-    }
-
-    // Mock product URLs - In production, these would be real product URLs
-    const baseUrls = {
-        amazon: 'https://www.amazon.in/dp/',
-        flipkart: 'https://www.flipkart.com/product/'
-    }
-
-    const productId = `PROD${product.id.toString().padStart(8, '0')}`
-    const baseUrl = baseUrls[product.affiliate]
-    const affiliateId = affiliateIds[product.affiliate]
-
-    if (product.affiliate === 'amazon') {
-        return `${baseUrl}${productId}?tag=${affiliateId}`
-    } else {
-        return `${baseUrl}${productId}?affid=${affiliateId}`
-    }
-}
-
-// Filter products based on search, price, and category
-export function filterProducts(products, searchQuery, priceRange, category) {
-    return products.filter(product => {
-        // Category filter
-        if (category !== 'all' && product.category !== category) {
-            return false
-        }
-
-        // Price filter
-        if (product.price < priceRange.min || product.price > priceRange.max) {
-            return false
-        }
-
-        // Search filter
-        if (searchQuery) {
-            const query = searchQuery.toLowerCase()
-            const matchesName = product.name.toLowerCase().includes(query)
-            const matchesCategory = product.category.toLowerCase().includes(query)
-            const matchesFeatures = product.features.some(f =>
-                f.toLowerCase().includes(query)
-            )
-
-            return matchesName || matchesCategory || matchesFeatures
-        }
-
-        return true
-    })
-}
+        affiliate: 'amazon',
+    },
+];

@@ -1,11 +1,12 @@
-import './Hero.css'
+import React from 'react';
+import '../styles/components/Hero.css';
 
-function Hero() {
+const Hero: React.FC = () => {
     return (
         <section className="hero">
             <div className="hero-background">
-                <div className="hero-gradient"></div>
-                <div className="hero-pattern"></div>
+                <div className="hero-gradient" />
+                <div className="hero-pattern" />
             </div>
 
             <div className="container hero-content">
@@ -32,12 +33,12 @@ function Hero() {
                         <div className="stat-number">10K+</div>
                         <div className="stat-label">Products</div>
                     </div>
-                    <div className="stat-divider"></div>
+                    <div className="stat-divider" />
                     <div className="stat-item">
                         <div className="stat-number">50+</div>
                         <div className="stat-label">Categories</div>
                     </div>
-                    <div className="stat-divider"></div>
+                    <div className="stat-divider" />
                     <div className="stat-item">
                         <div className="stat-number">24/7</div>
                         <div className="stat-label">Price Updates</div>
@@ -46,10 +47,10 @@ function Hero() {
             </div>
 
             <div className="hero-scroll-indicator">
-                <div className="scroll-arrow"></div>
+                <div className="scroll-arrow" />
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;
