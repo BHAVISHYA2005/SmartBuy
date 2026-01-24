@@ -1,0 +1,37 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search Section */
+.search-section {
+  padding: var(--space-xl) 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.search-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* Products Section */
+.products-section {
+  padding: var(--space-2xl) 0;
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .search-section,
+  .products-section {
+    padding: var(--space-lg) 0;
+  }
+}

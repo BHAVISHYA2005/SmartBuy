@@ -1,0 +1,286 @@
+// Mock product data - In production, this would come from an API
+// Affiliate links are automatically generated with your affiliate ID
+
+export const products = [
+    // Mobile Phones
+    {
+        id: 1,
+        name: 'Samsung Galaxy M34 5G',
+        category: 'mobile',
+        price: 18999,
+        originalPrice: 24999,
+        image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop',
+        rating: 4.3,
+        reviews: 12453,
+        features: ['6000mAh Battery', '50MP Camera', '120Hz Display'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 2,
+        name: 'Redmi Note 13 Pro',
+        category: 'mobile',
+        price: 23999,
+        originalPrice: 27999,
+        image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop',
+        rating: 4.5,
+        reviews: 8234,
+        features: ['200MP Camera', 'AMOLED Display', '67W Fast Charging'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 3,
+        name: 'OnePlus Nord CE 3',
+        category: 'mobile',
+        price: 26999,
+        originalPrice: 32999,
+        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop',
+        rating: 4.4,
+        reviews: 5621,
+        features: ['80W SuperVOOC', '5000mAh Battery', '108MP Camera'],
+        affiliate: 'flipkart'
+    },
+    {
+        id: 4,
+        name: 'Realme 11 Pro+',
+        category: 'mobile',
+        price: 27999,
+        originalPrice: 31999,
+        image: 'https://images.unsplash.com/photo-1592286927505-b0501e6f0f04?w=400&h=400&fit=crop',
+        rating: 4.2,
+        reviews: 4532,
+        features: ['200MP OIS Camera', 'Curved AMOLED', '100W Charging'],
+        affiliate: 'amazon'
+    },
+
+    // Laptops
+    {
+        id: 5,
+        name: 'HP 15s Ryzen 5',
+        category: 'laptop',
+        price: 42990,
+        originalPrice: 54990,
+        image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop',
+        rating: 4.3,
+        reviews: 3421,
+        features: ['AMD Ryzen 5', '8GB RAM', '512GB SSD'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 6,
+        name: 'Lenovo IdeaPad Slim 3',
+        category: 'laptop',
+        price: 38990,
+        originalPrice: 49990,
+        image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=400&fit=crop',
+        rating: 4.1,
+        reviews: 2876,
+        features: ['Intel i5 12th Gen', '16GB RAM', '512GB SSD'],
+        affiliate: 'flipkart'
+    },
+    {
+        id: 7,
+        name: 'ASUS Vivobook 15',
+        category: 'laptop',
+        price: 45990,
+        originalPrice: 59990,
+        image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&h=400&fit=crop',
+        rating: 4.4,
+        reviews: 1987,
+        features: ['Intel i5', '8GB RAM', 'Fingerprint Sensor'],
+        affiliate: 'amazon'
+    },
+
+    // Headphones
+    {
+        id: 8,
+        name: 'Sony WH-1000XM5',
+        category: 'headphones',
+        price: 24990,
+        originalPrice: 32990,
+        image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=400&fit=crop',
+        rating: 4.7,
+        reviews: 8932,
+        features: ['ANC', '30hr Battery', 'Premium Sound'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 9,
+        name: 'JBL Tune 760NC',
+        category: 'headphones',
+        price: 4999,
+        originalPrice: 7999,
+        image: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=400&fit=crop',
+        rating: 4.2,
+        reviews: 5432,
+        features: ['Active Noise Cancelling', '35hr Battery', 'JBL Signature'],
+        affiliate: 'flipkart'
+    },
+    {
+        id: 10,
+        name: 'boAt Rockerz 550',
+        category: 'headphones',
+        price: 1499,
+        originalPrice: 3990,
+        image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop',
+        rating: 4.0,
+        reviews: 12453,
+        features: ['20hr Playback', 'Physical Noise Isolation', 'Dual Modes'],
+        affiliate: 'amazon'
+    },
+
+    // Smart Watches
+    {
+        id: 11,
+        name: 'Fire-Boltt Phoenix Pro',
+        category: 'watch',
+        price: 1799,
+        originalPrice: 7999,
+        image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop',
+        rating: 4.1,
+        reviews: 34521,
+        features: ['1.39" Display', 'Bluetooth Calling', '120+ Sports Modes'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 12,
+        name: 'Noise ColorFit Pro 4',
+        category: 'watch',
+        price: 2499,
+        originalPrice: 5999,
+        image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop',
+        rating: 4.2,
+        reviews: 23456,
+        features: ['1.72" Display', 'Bluetooth Calling', '100+ Watch Faces'],
+        affiliate: 'flipkart'
+    },
+    {
+        id: 13,
+        name: 'Amazfit GTS 4 Mini',
+        category: 'watch',
+        price: 6999,
+        originalPrice: 9999,
+        image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=400&fit=crop',
+        rating: 4.5,
+        reviews: 4532,
+        features: ['AMOLED Display', '15 Day Battery', '120+ Sports Modes'],
+        affiliate: 'amazon'
+    },
+
+    // Cameras
+    {
+        id: 14,
+        name: 'Canon EOS 1500D',
+        category: 'camera',
+        price: 31990,
+        originalPrice: 39995,
+        image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&h=400&fit=crop',
+        rating: 4.6,
+        reviews: 2341,
+        features: ['24.1MP CMOS', 'Full HD Video', 'WiFi & NFC'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 15,
+        name: 'Nikon D3500',
+        category: 'camera',
+        price: 35990,
+        originalPrice: 44950,
+        image: 'https://images.unsplash.com/photo-1606980707986-683d0e1c5f3d?w=400&h=400&fit=crop',
+        rating: 4.7,
+        reviews: 1876,
+        features: ['24.2MP DX-Format', '1080p Video', 'Guide Mode'],
+        affiliate: 'flipkart'
+    },
+
+    // Tablets
+    {
+        id: 16,
+        name: 'Samsung Galaxy Tab A8',
+        category: 'tablet',
+        price: 17999,
+        originalPrice: 22999,
+        image: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=400&fit=crop',
+        rating: 4.3,
+        reviews: 5432,
+        features: ['10.5" Display', 'Quad Speakers', '7040mAh Battery'],
+        affiliate: 'amazon'
+    },
+    {
+        id: 17,
+        name: 'Lenovo Tab M10',
+        category: 'tablet',
+        price: 12990,
+        originalPrice: 16990,
+        image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop',
+        rating: 4.1,
+        reviews: 3421,
+        features: ['10.1" FHD Display', 'Dual Speakers', 'Kids Mode'],
+        affiliate: 'flipkart'
+    },
+    {
+        id: 18,
+        name: 'Realme Pad Mini',
+        category: 'tablet',
+        price: 10999,
+        originalPrice: 14999,
+        image: 'https://images.unsplash.com/photo-1585790050230-5dd28404f1e9?w=400&h=400&fit=crop',
+        rating: 4.2,
+        reviews: 2987,
+        features: ['8.7" Display', 'Slim Design', '6400mAh Battery'],
+        affiliate: 'amazon'
+    }
+]
+
+// Function to generate affiliate link
+export function generateAffiliateLink(product) {
+    // In production, replace with your actual affiliate IDs
+    const affiliateIds = {
+        amazon: 'YOUR_AMAZON_AFFILIATE_ID',
+        flipkart: 'YOUR_FLIPKART_AFFILIATE_ID'
+    }
+
+    // Mock product URLs - In production, these would be real product URLs
+    const baseUrls = {
+        amazon: 'https://www.amazon.in/dp/',
+        flipkart: 'https://www.flipkart.com/product/'
+    }
+
+    const productId = `PROD${product.id.toString().padStart(8, '0')}`
+    const baseUrl = baseUrls[product.affiliate]
+    const affiliateId = affiliateIds[product.affiliate]
+
+    if (product.affiliate === 'amazon') {
+        return `${baseUrl}${productId}?tag=${affiliateId}`
+    } else {
+        return `${baseUrl}${productId}?affid=${affiliateId}`
+    }
+}
+
+// Filter products based on search, price, and category
+export function filterProducts(products, searchQuery, priceRange, category) {
+    return products.filter(product => {
+        // Category filter
+        if (category !== 'all' && product.category !== category) {
+            return false
+        }
+
+        // Price filter
+        if (product.price < priceRange.min || product.price > priceRange.max) {
+            return false
+        }
+
+        // Search filter
+        if (searchQuery) {
+            const query = searchQuery.toLowerCase()
+            const matchesName = product.name.toLowerCase().includes(query)
+            const matchesCategory = product.category.toLowerCase().includes(query)
+            const matchesFeatures = product.features.some(f =>
+                f.toLowerCase().includes(query)
+            )
+
+            return matchesName || matchesCategory || matchesFeatures
+        }
+
+        return true
+    })
+}
