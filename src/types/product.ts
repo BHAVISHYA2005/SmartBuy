@@ -2,6 +2,11 @@ export type Category = 'all' | 'mobile' | 'laptop' | 'headphones' | 'watch' | 'c
 
 export type AffiliatePlatform = 'amazon' | 'flipkart';
 
+export interface PricePoint {
+    date: string;
+    price: number;
+}
+
 export interface Product {
     id: number;
     name: string;
@@ -13,6 +18,8 @@ export interface Product {
     reviews: number;
     features: string[];
     affiliate: AffiliatePlatform;
+    productUrl?: string;
+    priceHistory?: PricePoint[];
 }
 
 export interface PriceRange {

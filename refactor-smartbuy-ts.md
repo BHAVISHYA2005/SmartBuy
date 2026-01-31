@@ -60,6 +60,12 @@ Transform the SmartBuy product finder into a production-ready, type-safe, and mo
 - [ ] Set up `.github/workflows/update-prices.yml` for daily scheduled scans
 - [ ] Implement Vercel deployment hook for data updates
 
+## 📈 Phase 6: Price History Visualization
+- [x] Extend `Product` interface for `priceHistory`
+- [x] Implement SVG Sparkline component
+- [x] Add price trend analysis (Lowest historically, current trend)
+- [x] Integrated "Price dropping" insights into Product Cards
+
 ---
 
 ## 🧭 Design Decisions

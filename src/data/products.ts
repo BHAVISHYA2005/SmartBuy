@@ -13,6 +13,13 @@ export const products: Product[] = [
         reviews: 12453,
         features: ['6000mAh Battery', '50MP Camera', '120Hz Display'],
         affiliate: 'amazon',
+        productUrl: 'https://www.amazon.in/Samsung-Galaxy-Bluebird-128GB-Storage/dp/B0C39R13BK',
+        priceHistory: [
+            { date: '2024-01-01', price: 21999 },
+            { date: '2024-01-15', price: 20999 },
+            { date: '2024-02-01', price: 19999 },
+            { date: '2024-02-15', price: 18999 },
+        ],
     },
     {
         id: 2,
@@ -25,6 +32,13 @@ export const products: Product[] = [
         reviews: 8234,
         features: ['200MP Camera', 'AMOLED Display', '67W Fast Charging'],
         affiliate: 'amazon',
+        productUrl: 'https://www.amazon.in/Samsung-Galaxy-Awesome-Graphite-Storage/dp/B0CX92S9N8',
+        priceHistory: [
+            { date: '2024-01-01', price: 25999 },
+            { date: '2024-01-15', price: 24999 },
+            { date: '2024-02-01', price: 26999 },
+            { date: '2024-02-15', price: 23999 },
+        ],
     },
     {
         id: 3,
@@ -37,6 +51,13 @@ export const products: Product[] = [
         reviews: 5621,
         features: ['80W SuperVOOC', '5000mAh Battery', '108MP Camera'],
         affiliate: 'flipkart',
+        productUrl: 'https://www.flipkart.com/oneplus-nord-ce-3-5g-grey-shimmer-128-gb/p/itme0d0df3e0d8f0',
+        priceHistory: [
+            { date: '2024-01-01', price: 28999 },
+            { date: '2024-01-15', price: 27999 },
+            { date: '2024-02-01', price: 27499 },
+            { date: '2024-02-15', price: 26999 },
+        ],
     },
     {
         id: 4,

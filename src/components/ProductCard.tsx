@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
 import { Product } from '../types/product';
 import { useAffiliateLinks } from '../hooks/useAffiliateLinks';
+import PriceSparkline from './PriceSparkline';
+import { getLowestPrice, getPriceTrend } from '../utils/priceHelpers';
 import '../styles/components/ProductCard.css';
 
 interface ProductCardProps {
     product: Product;
-    index: number;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
     const { handleAffiliateClick } = useAffiliateLinks();
 
-    const discount = Math.round(
-        ((product.originalPrice - product.price) / product.originalPrice) * 100
-    );
+    const hasHistory = product.priceHistory && product.priceHistory.length > 0;
+    const lowestPrice = hasHistory ? getLowestPrice(product.priceHistory!) : null;
+    const trend = hasHistory ? getPriceTrend(product.priceHistory!) : null;
+    const isLowest = lowestPrice && product.price <= lowestPrice;
 
     return (
-        <div
-            className="product-card animate-fade-in"
-            style={{ animationDelay: `${index * 0.05}s` }}
-        >
-            {discount > 0 && <div className="discount-badge">{discount}% OFF</div>}
-
+        <div className="product-card">
             <div className="product-image-container">
                 {!imageLoaded && <div className="image-skeleton animate-pulse" />}
                 <img
@@ -32,86 +29,57 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
                     onLoad={() => setImageLoaded(true)}
                     loading="lazy"
                 />
+                {isLowest && (
+                    <span className="badge badge-success">Historic Low</span>
+                )}
             </div>
 
-            <div className="product-info">
-                <h3 className="product-name">{product.name}</h3>
-
-                <div className="product-rating">
-                    <div className="stars">
-                        {[...Array(5)].map((_, i) => (
-                            <span
-                                key={i}
-                                className={`star ${i < Math.floor(product.rating) ? 'filled' : ''}`}
-                            >
-                                ★
-                            </span>
-                        ))}
+            <div className="product-content">
+                <div className="product-header">
+                    <span className="category-tag">{product.category}</span>
+                    <div className="rating">
+                        <span className="star">★</span>
+                        <span>{product.rating}</span>
+                        <span className="review-count">({product.reviews.toLocaleString()})</span>
                     </div>
-                    <span className="rating-text">
-                        {product.rating} ({product.reviews.toLocaleString()})
-                    </span>
                 </div>
 
-                <div className="product-features">
-                    {product.features.slice(0, 3).map((feature, i) => (
-                        <span key={i} className="feature-tag">
-                            {feature}
-                        </span>
-                    ))}
-                </div>
+                <h3 className="product-title">{product.name}</h3>
 
-                <div className="product-pricing">
-                    <div className="price-row">
+                <div className="price-section">
+                    <div className="price-info">
                         <span className="current-price">₹{product.price.toLocaleString()}</span>
-                        {product.originalPrice > product.price && (
-                            <span className="original-price">
-                                ₹{product.originalPrice.toLocaleString()}
-                            </span>
-                        )}
+                        <span className="original-price">₹{product.originalPrice.toLocaleString()}</span>
                     </div>
-                    <div className="savings-text">
-                        Save ₹{(product.originalPrice - product.price).toLocaleString()}
-                    </div>
+                    {hasHistory && (
+                        <PriceSparkline history={product.priceHistory!} />
+                    )}
                 </div>
 
-                <div className="product-actions">
-                    <button
-                        className="btn btn-primary btn-buy"
-                        onClick={() => handleAffiliateClick(product)}
-                    >
-                        <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                        >
-                            <circle cx="9" cy="21" r="1" />
-                            <circle cx="20" cy="21" r="1" />
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                        </svg>
-                        Buy Now
-                    </button>
-                    <button className="btn-icon" aria-label="Add to wishlist">
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                        >
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                    </button>
+                <ul className="feature-list">
+                    {product.features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                    ))}
+                </ul>
+
+                <div className="card-footer">
+                    <div className="affiliate-info">
+                        <span className={`platform-icon icon-${product.affiliate}`}></span>
+                        <span>Available on {product.affiliate}</span>
+                    </div>
+                    {hasHistory && trend === 'down' && (
+                        <div className="trend-insight">
+                            🔥 Price is dropping!
+                        </div>
+                    )}
                 </div>
 
-                <div className="platform-badge">
-                    Available on{' '}
-                    <strong>{product.affiliate === 'amazon' ? 'Amazon' : 'Flipkart'}</strong>
-                </div>
+                <button
+                    className="btn btn-primary btn-block"
+                    onClick={() => handleAffiliateClick(product)}
+                >
+                    View Deal
+                </button>
             </div>
         </div>
     );
