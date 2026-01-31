@@ -1,7 +1,7 @@
 ---
 task: refactor-smartbuy-ts
 title: SmartBuy TypeScript & Architecture Refactor
-status: planning
+status: in-progress
 priority: high
 agents:
   - project-planner (lead)
@@ -15,16 +15,16 @@ agents:
 Transform the SmartBuy product finder into a production-ready, type-safe, and modular React application that follows 2025 industry standards for a senior-level resume.
 
 ## 🏗️ Phase 1: Infrastructure & Environment Setup
-- [ ] Install TypeScript & React types
-- [ ] Install Vitest & React Testing Library
-- [ ] Configure `tsconfig.json` for strict mode
-- [ ] Update `vite.config.js` for Vitest and TS support
+- [x] Install TypeScript & React types
+- [x] Install Vitest & React Testing Library
+- [x] Configure `tsconfig.json` for strict mode
+- [x] Update `vite.config.ts` for Vitest and TS support
 
 ## 🛠️ Phase 2: Modular CSS & Design Tokens
-- [ ] Create `src/styles/` directory
-- [ ] Extract global design tokens to `src/styles/tokens.css`
-- [ ] Migrate base styles to `src/styles/base.css`
-- [ ] Modularize component styles into:
+- [x] Create `src/styles/` directory
+- [x] Extract global design tokens to `src/styles/tokens.css`
+- [x] Migrate base styles to `src/styles/base.css`
+- [x] Modularize component styles into:
     - `src/styles/components/ProductCard.css`
     - `src/styles/components/ProductGrid.css`
     - `src/styles/components/Filters.css`
@@ -33,27 +33,32 @@ Transform the SmartBuy product finder into a production-ready, type-safe, and mo
     - `src/styles/components/Footer.css`
 
 ## 🔷 Phase 3: TypeScript Migration & Hook Extraction (Logic Layer)
-- [ ] Define shared types in `src/types/product.ts`
-- [ ] Extract logic into specialized hooks:
-    - [ ] `useProductFilter.ts` (Filtering & Pagination)
-    - [ ] `useAffiliateLinks.ts` (Link Generation)
-    - [ ] `usePriceComparison.ts` (Sorting & Analysis)
-- [ ] Convert data files to `.ts`:
-    - [ ] `src/data/products.ts`
-- [ ] Systematically convert components to `.tsx`:
-    - [ ] `Hero.tsx`
-    - [ ] `SearchBar.tsx`
-    - [ ] `PriceFilter.tsx`
-    - [ ] `ProductCard.tsx`
-    - [ ] `ProductGrid.tsx`
-    - [ ] `Footer.tsx`
-    - [ ] `App.tsx`
+- [x] Define shared types in `src/types/product.ts`
+- [x] Extract logic into specialized hooks:
+    - [x] `useProductFilter.ts` (Filtering & Pagination)
+    - [x] `useAffiliateLinks.ts` (Link Generation)
+- [x] Convert data files to `.ts`:
+    - [x] `src/data/products.ts`
+- [x] Systematically convert components to `.tsx`:
+    - [x] `Hero.tsx`
+    - [x] `SearchBar.tsx`
+    - [x] `PriceFilter.tsx`
+    - [x] `ProductCard.tsx`
+    - [x] `ProductGrid.tsx`
+    - [x] `Footer.tsx`
+    - [x] `App.tsx`
 
 ## 🧪 Phase 4: Testing & Validation
-- [ ] Write unit tests for `useProductFilter` logic
-- [ ] Write unit tests for `useAffiliateLinks` logic
+- [x] Write unit tests for `useProductFilter` logic
+- [x] Run `npx vitest run` and confirm passes
 - [ ] Run `python .agent/scripts/checklist.py .` for final audit
-- [ ] Perform manual verification with browser subagent
+- [x] Perform manual verification with browser subagent
+
+## 🤖 Phase 5: Automation & Live Data (GitHub Actions)
+- [ ] Set up `.github/workflows/ci.yml` for automated testing
+- [ ] Create `scripts/scraper.ts` for price extraction
+- [ ] Set up `.github/workflows/update-prices.yml` for daily scheduled scans
+- [ ] Implement Vercel deployment hook for data updates
 
 ---
 
