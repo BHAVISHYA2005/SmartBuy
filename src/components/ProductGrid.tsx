@@ -49,11 +49,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, sortBy, setSortBy }
             </div>
 
             <div className="product-grid">
-                {products.map((product, index) => (
+                {products.map((product) => (
                     <ProductCard
                         key={product.id}
                         product={product}
-                        index={index}
                     />
                 ))}
             </div>
