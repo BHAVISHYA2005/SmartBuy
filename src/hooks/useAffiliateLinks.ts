@@ -2,10 +2,10 @@ import { Product } from '../types/product';
 
 export const useAffiliateLinks = () => {
     const generateLink = (product: Product): string => {
-        // In production, these should be environment variables
+        // Get affiliate IDs from environment variables
         const affiliateIds = {
-            amazon: 'YOUR_AMAZON_AFFILIATE_ID',
-            flipkart: 'YOUR_FLIPKART_AFFILIATE_ID',
+            amazon: import.meta.env.VITE_AMAZON_AFFILIATE_ID || 'YOUR_AMAZON_AFFILIATE_ID',
+            flipkart: import.meta.env.VITE_FLIPKART_AFFILIATE_ID || 'YOUR_FLIPKART_AFFILIATE_ID',
         };
 
         const baseUrls = {
